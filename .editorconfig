@@ -1,5 +1,10 @@
 [*.{js,jsx,ts,tsx,vue}]
+quoteProps = "as-needed"
+singleQuote = true
+jsxSingleQuote = true
 indent_style = space
+trailingComma = "es5"
 indent_size = 2
+semi = false
 trim_trailing_whitespace = true
 insert_final_newline = true
