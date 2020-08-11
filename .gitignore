@@ -20,3 +20,11 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+### Firebase ###
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+# End of https://www.toptal.com/developers/gitignore/api/firebase
