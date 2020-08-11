@@ -3,10 +3,13 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/dogs">Dogs</router-link> |
-      <router-link to="/cats">Cats</router-link> |
-      <router-link to="/pet">Pet</router-link>
+      <router-link to="/cats">Cats</router-link>
     </div>
-    <router-view />
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col> <router-view /></b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
