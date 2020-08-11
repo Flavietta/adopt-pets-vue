@@ -7,21 +7,21 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - restore_cache:
-        keys:
-          # Find a cache corresponding to this specific package-lock.json
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          # Fallback cache to be used
-          - v1-npm-deps-
+          keys:
+            # Find a cache corresponding to this specific package-lock.json
+            - v1-npm-deps-{{ checksum "package-lock.json" }}
+            # Fallback cache to be used
+            - v1-npm-deps-
       - run:
-        name: Install Dependencies
-        command: yarn install
+          name: Install Dependencies
+          command: yarn install
       - save_cache:
-        key: v1-npm-deps-{{ checksum "package-lock.json" }}
-        paths:
-          - ./node_modules
+          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
       - run:
-        name: Build stage
-        command: yarn build
+          name: Build stage
+          command: yarn build
       - run:
-        name: Firebase deployment
-        command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+          name: Firebase deployment
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
